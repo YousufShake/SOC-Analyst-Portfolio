@@ -2,7 +2,12 @@
 
 A self-hosted SIEM lab built from scratch on Docker, with three threat-intel/AI integrations wired into the alert pipeline and verified end-to-end against a live Windows agent.
 
-**Stack:** Wazuh 4.9.0 (Manager, Indexer, Dashboard) · Docker Compose · Ubuntu 24.04 LTS host · Windows 11 agent
+Stack:
+- SIEM: Wazuh 4.9.0 — Manager, Indexer, and Dashboard, each running as a separate Docker container
+- Host OS: Ubuntu Server 24.04.4 LTS, running as a VM under VMware Workstation Pro 17
+- Containerization: Docker Engine 29.8.1 with Docker Compose v5.5.1
+- Monitored endpoint: Windows 11 Pro, connected as a Wazuh agent (v4.9.0) over the manager's default ports (1514/1515)
+- Integrations: VirusTotal (built-in), AbuseIPDB (custom Python script), ChatGPT / OpenAI API (custom Python script)
 
 ---
 
